@@ -39,6 +39,7 @@
     --clr-shadow: #3d3d3d;
     --clr-black: #030303;
     --clr-no-color: transparent;
+    --clr-button: linear-gradient(to bottom, #0E2E34, #2A879A);
 }
 
 /* #region global  */
@@ -49,6 +50,28 @@ body {
 
     section {
         margin: 50px auto;
+    }
+}
+
+
+
+.btn-primary {
+    background: var(--clr-button);
+    border-bottom: 1px!important;
+    border-color: var(--clr-base-2)!important;
+
+ 
+
+
+    &:hover {
+        border-color: var(--clr-accent)!important;
+        color: var(--clr-accent);
+        font-weight: bold;
+        transition: .3s all;
+
+        & i.fa-whatsapp {
+            color: lime;
+        }
     }
 }
 
@@ -177,5 +200,6 @@ nav {
         width: 50px;
     }
 }
+
 
 /* #endregion main  */
