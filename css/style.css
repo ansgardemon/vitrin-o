@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+
+@font-face {
+    font-family: "Bebas";
+    src: url(../font/BebasNeue-Regular.ttf);
+}
+
+
+
+:root {
+    --font-accent: "Bebas";
+    --font-txt: "Aboreto";
+    --txt-logo: 3rem;
+    --txt-icon: 2.5rem;
+    --txt-title: 1.8rem;
+    --txt-subtitle: 1.6rem;
+    --txt-paragraph: 0.9rem;
+    --txt-anchor: 0.8rem;
+    --transition: .5s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-txt);
+    cursor: default;
+    transition: var(--transition);
+
+}
+
+.darkMode {
+    --clr-base: #0F282F;
+    --clr-base-2: #2A879A;
+    --clr-text: #f2f2f2;
+    --clr-accent: #FD7E14;
+    --clr-accent-bg: #FD7E1460;
+    --clr-fake-bg-menu: #03030390;
+    --clr-shadow: #3d3d3d;
+    --clr-black: #030303;
+    --clr-no-color: transparent;
+}
+
+/* #region global  */
+
+body {
+    background: linear-gradient(to bottom, var(--clr-base) 80%, var(--clr-base-2));
+    color: var(--clr-text);
+
+    section {
+        margin: 50px auto;
+    }
+}
+
+
+/* #endregion global  */
+
+
+
+/* #region header  */
+
+
+nav {
+    background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
+    height: 75px;
+    display: flex;
+    justify-content: space-evenly !important;
+
+    .navbar-brand {
+        font-family: var(--font-txt);
+        font-size: var(--txt-logo) !important;
+        color: var(--clr-text);
+
+
+        &:hover {
+            color: var(--clr-text);
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+
+    /* Logo */
+
+    .navbar-nav {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+
+        .nav-item {
+            .nav-link {
+
+            
+            font-size: 1.5em !important;
+            color: var(--clr-text) !important;
+            position: relative;
+            text-decoration: none;
+            padding-bottom: 3px;
+
+
+            &:hover {
+                cursor: pointer;
+                font-weight: bold;
+                transform: scale(1.03);
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 3px;
+                background-color: currentColor;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: var(--transition);
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+            }
+        }
+        }
+    }
+    /* Lista de Links */
+}
+
+
+
+
+/* #endregion header  */
+
+
+/* #region main  */
+
+#banner {
+    margin: 0;
+    position: relative;
+
+    .bannerContaier {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 80vh;
+        width: 100vw;
+        background: url(../img/banner/banner.jpeg) center no-repeat;
+        background-size: cover;
+
+    }
+
+    .bannerTextBg {
+        position: relative;
+        height: 50vh;
+        width: 70vw;
+        background-color: #0f282fbb;
+        border-radius: 20px;
+        filter: blur(10px);
+        top: 0;
+        right: 0;
+        /* transform: translate(-50%, -50%); */
+    }
+
+    p {
+        text-align: center;
+        position: absolute;
+        font-size: var(--txt-logo);
+        z-index: 1;
+    }
+}
+
+
+#especialidades,
+#servicos {
+    img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* #endregion main  */
