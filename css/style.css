@@ -24,12 +24,8 @@
     font-family: var(--font-txt);
     cursor: default;
     transition: var(--transition);
-<<<<<<< Updated upstream
-    scroll-behavior: smooth;
-=======
     list-style: none;
 }
->>>>>>> Stashed changes
 
 html {
     scroll-behavior: smooth;
@@ -62,7 +58,7 @@ body {
     }
 }
 
-<<<<<<< Updated upstream
+
 .bg-menu {
     color: var(--clr-base-2)!important;
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));;
@@ -83,7 +79,7 @@ body {
 
 
     &:hover {
-=======
+
 .btn-primary {
     background: var(--clr-button);
     border-bottom: 1px !important;
@@ -92,7 +88,6 @@ body {
     &:hover {
         border-color: var(--clr-accent) !important;
         color: var(--clr-accent);
->>>>>>> Stashed changes
         font-weight: bold;
         transition: font-weight 0.2s ease-in-out; /* First, make text bold */
     
@@ -238,7 +233,7 @@ nav {
                 padding-bottom: 3px;
 
 
-<<<<<<< Updated upstream
+
             &:hover {
                 cursor: pointer;
                 font-weight: bold;
@@ -264,31 +259,7 @@ nav {
                 transform: scaleX(1);
             }
         }
-=======
-                &:hover {
-                    cursor: pointer;
-                    font-weight: bold;
-                    transform: scale(1.03);
-                }
 
-                &::after {
-                    content: "";
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 3px;
-                    background-color: currentColor;
-                    transform: scaleX(0);
-                    transform-origin: left;
-                    transition: var(--transition);
-                }
-
-                &:hover::after {
-                    transform: scaleX(1);
-                }
-            }
->>>>>>> Stashed changes
         }
     }
 
