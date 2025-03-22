@@ -5,8 +5,6 @@
     src: url(../font/BebasNeue-Regular.ttf);
 }
 
-
-
 :root {
     --font-accent: "Bebas";
     --font-txt: "Aboreto";
@@ -16,7 +14,7 @@
     --txt-subtitle: 1.6rem;
     --txt-paragraph: 0.9rem;
     --txt-anchor: 0.8rem;
-    --transition: .5s ease;
+    --transition: .3s ease;
 }
 
 * {
@@ -26,8 +24,15 @@
     font-family: var(--font-txt);
     cursor: default;
     transition: var(--transition);
+<<<<<<< Updated upstream
     scroll-behavior: smooth;
+=======
+    list-style: none;
+}
+>>>>>>> Stashed changes
 
+html {
+    scroll-behavior: smooth;
 }
 
 .darkMode {
@@ -50,10 +55,14 @@ body {
     color: var(--clr-text);
 
     section {
-        margin: 50px auto;
+        display: flex;
+        align-items: center;
+        height: 70vh;
+        margin: 20px auto;
     }
 }
 
+<<<<<<< Updated upstream
 .bg-menu {
     color: var(--clr-base-2)!important;
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));;
@@ -74,6 +83,16 @@ body {
 
 
     &:hover {
+=======
+.btn-primary {
+    background: var(--clr-button);
+    border-bottom: 1px !important;
+    border-color: var(--clr-base-2) !important;
+
+    &:hover {
+        border-color: var(--clr-accent) !important;
+        color: var(--clr-accent);
+>>>>>>> Stashed changes
         font-weight: bold;
         transition: font-weight 0.2s ease-in-out; /* First, make text bold */
     
@@ -87,12 +106,84 @@ body {
 }
 
 
+/* #region scroll  */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Fundo da área da barra */
+::-webkit-scrollbar-track {
+    background: var(--clr-black);
+}
+
+/* Estilo do "thumb" (a parte móvel da barra) */
+::-webkit-scrollbar-thumb {
+    background: var(--clr-base);
+    border-radius: 4px;
+}
+
+/* Quando o usuário passa o mouse sobre a barra */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-button);
+}
+
+
+/* #endregion scroll  */
+
+.sobreTxt,
+.especialidadesTxt {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        color: var(--clr-base-2);
+        font-family: var(--font-accent);
+        text-align: center;
+        font-size: var(--txt-logo);
+        font-weight: 500;
+
+        &:hover {
+            filter: brightness(1.5);
+            cursor: pointer;
+            text-shadow: 0 0 10px var(--clr-base-2);
+        }
+    }
+
+    p {
+        color: var(--clr-text);
+        font-family: var(--font-accent);
+        font-weight: lighter;
+        font-size: var(--txt-icon);
+    }
+
+    button {
+        height: 75px;
+        width: 200px;
+        border-radius: 50px;
+        border: 1px solid transparent;
+        background: linear-gradient(to right, var(--clr-base-2), var(--clr-base));
+        font-family: var(--font-accent);
+        font-size: var(--txt-subtitle);
+
+        &:hover {
+            border: 1px solid var(--clr-text) !important;
+            color: var(--clr-text);
+            font-weight: normal;
+            transform: scale(1.1);
+        }
+    }
+}
+
 /* #endregion global  */
 
 
 
 /* #region header  */
-
 
 nav {
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
@@ -139,14 +230,15 @@ nav {
         .nav-item {
             .nav-link {
 
-            
-            font-size: 1.5em !important;
-            color: var(--clr-text) !important;
-            position: relative;
-            text-decoration: none;
-            padding-bottom: 3px;
+
+                font-size: 1.5em !important;
+                color: var(--clr-text) !important;
+                position: relative;
+                text-decoration: none;
+                padding-bottom: 3px;
 
 
+<<<<<<< Updated upstream
             &:hover {
                 cursor: pointer;
                 font-weight: bold;
@@ -172,13 +264,36 @@ nav {
                 transform: scaleX(1);
             }
         }
+=======
+                &:hover {
+                    cursor: pointer;
+                    font-weight: bold;
+                    transform: scale(1.03);
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 3px;
+                    background-color: currentColor;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: var(--transition);
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                }
+            }
+>>>>>>> Stashed changes
         }
     }
+
     /* Lista de Links */
 }
-
-
-
 
 /* #endregion header  */
 
@@ -188,14 +303,14 @@ nav {
 #banner {
     margin: 0;
     position: relative;
+    height: 80vh;
+    width: 100%;
 
     .bannerContaier {
+        height: 80vh;
         display: flex;
         justify-content: center;
         align-items: center;
-
-        height: 80vh;
-        width: 100vw;
         background: url(../img/banner/banner.jpeg) center no-repeat;
         background-size: cover;
 
@@ -205,9 +320,8 @@ nav {
         position: relative;
         height: 50vh;
         width: 70vw;
-        background-color: #0f282fbb;
+        background-color: #0F282F80;
         border-radius: 20px;
-        filter: blur(10px);
         top: 0;
         right: 0;
         /* transform: translate(-50%, -50%); */
@@ -221,12 +335,119 @@ nav {
     }
 }
 
+#sobre {
+    .sobreContainer {
+        height: 100%;
 
-#especialidades,
+        .sobreImg {
+            width: 50%;
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(2, 50%);
+            grid-template-areas:
+                "sobre missão"
+                "visão valores";
+            place-items: center;
+
+            .sobreIcon {
+                display: grid;
+                place-items: center;
+                background: var(--clr-base-2);
+                border-radius: 50%;
+                padding: 10%;
+                cursor: pointer;
+                border: 1px solid var(--clr-no-color);
+                height: 250px;
+                width: 250px;
+
+                &:hover {
+                    background: var(--clr-button);
+                    border: 1px solid var(--clr-text);
+
+                    i {
+                        color: var(--clr-base);
+                    }
+                }
+
+
+                i {
+                    color: var(--clr-text);
+                    font-size: calc(var(--txt-logo) * 2);
+                    cursor: pointer;
+                }
+
+            }
+        }
+    }
+}
+
+#especialidades {
+
+    .especialidadesContainer {
+
+        .especialidadesImg {
+            display: grid;
+            place-items: center;
+            width: 50%;
+
+            img {
+                border-radius: 50%;
+                width: 75%;
+                filter: drop-shadow(5px 5px 10px var(--clr-fake-bg-menu));
+            }
+        }
+    }
+}
+
+
+
 #servicos {
-    img {
-        height: 50px;
-        width: 50px;
+
+    .servicosContainer {
+        .carousel-item {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+            img {
+                width: 30%;
+                border-radius: 50%;
+            }
+
+            .carousel-caption {
+                position: relative;
+                display: block;
+                text-align: center;
+                bottom: 0;
+                left: 0;
+            }
+
+        }
+
+        .carousel-caption {
+            h3 {
+                font-family: var(--font-accent);
+                font-size: var(--txt-title);
+            }
+
+            h4 {
+                font-size: var(--txt-paragraph);
+            }
+        }
+
+        .carousel-indicators {
+            transform: translateY(20px);
+        }
+
+        .carousel-control-prev {
+            left: 20%;
+            transform: translateY(-15%);
+        }
+
+        .carousel-control-next {
+            right: 20%;
+            transform: translateY(-15%);
+        }
     }
 }
 
