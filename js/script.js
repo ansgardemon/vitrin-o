@@ -9,30 +9,8 @@ const visao = document.querySelector(".visaoDiv");
 const valores = document.querySelector(".valoresDiv");
 
 
-btnSobre.addEventListener("click", ()=> {
-    sobre.style.display = "flex";
-    missao.style.display = "none";
-    visao.style.display = "none";
-    valores.style.display = "none";
-})
+btnSobre.addEventListener
 
-btnMissao.addEventListener("click", ()=> {
-    sobre.style.display = "none";
-    missao.style.display = "flex";
-    visao.style.display = "none";
-    valores.style.display = "none";
-})
 
-btnVisao.addEventListener("click", ()=> {
-    sobre.style.display = "none";
-    missao.style.display = "none";
-    visao.style.display = "flex";
-    valores.style.display = "none";
-})
 
-btnValores.addEventListener("click", ()=> {
-    sobre.style.display = "none";
-    missao.style.display = "none";
-    visao.style.display = "none";
-    valores.style.display = "flex";
-})
+
