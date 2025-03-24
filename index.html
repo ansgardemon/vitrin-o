@@ -65,21 +65,21 @@
 
         <section id="sobre">
             <div class="sobreContainer container d-flex">
-                <div class="sobreTxt col-6 place-items-center">
+                <div class="sobreTxt col-6 place-items-center sobreDiv">
                     <h2>Sobre Nós</h2>
                     <p>A VITRIN.O é uma agência em ascensão no mercado de desenvolvimento web com foco na experiência do
                         cliente e objetivo de impulsionar a sua visibilidade online visibilidade.</p>
                 </div>
-                <div class="sobreTxt col-6 place-items-center" style="display: none;">
+                <div class="sobreTxt col-6 place-items-center missaoDiv">
                     <h2>Missão</h2>
                     <p>Desenvolver sites personalizados de alta qualidade que atendam as necessidades dos nossos
                         clientes fornecendo-o uma experiencia excepcional.</p>
                 </div>
-                <div class="sobreTxt col-6 place-items-center" style="display: none;">
+                <div class="sobreTxt col-6 place-items-center visaoDiv">
                     <h2>Visão</h2>
                     <p>Ser a empresa líder em desenvolvimento de sites inovadores e personalizados.</p>
                 </div>
-                <div class="sobreTxt col-6 place-items-center" style="display: none;">
+                <div class="sobreTxt col-6 place-items-center valoresDiv">
                     <h2>Valores</h2>
                     <p>Inovação: Estamos comprometidos em estar sempre à frente da curva, adotando as últimas
                         tecnologias.
@@ -128,7 +128,7 @@
         <section id="servicos">
             <div class="servicosContainer container d-block mx-auto justify-content-center">
                 <div id="slideServicos" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                    data-bs-interval="200000" data-bs-pause="hover">
+                    data-bs-interval="2000" data-bs-pause="hover">
                     <div class="carousel-indicators">
                         <button type="button" data-bs-target="#slideServicos" data-bs-slide-to="0" class="active"
                             aria-current="true" aria-label="Slide 1"></button>
@@ -258,10 +258,11 @@
             <div class="formularioContainer container d-flex justify-content-center flex-column">
 
                 <h2 class="text-center my-5">entre em contato</h2>
+
                 <div class="form d-flex justify-content-center">
                     <div class="formImg">
                         <h2>Fale com um especialista</h2>
-                        <img src="" alt="">
+                        <img src="img/contato/imagemContato.webp" alt="">
                     </div>
                     <form>
                         <ul>
@@ -278,13 +279,23 @@
             </div>
         </section>
 
+        <div class="back" onclick="window.scrollTo(0, 0)"><i class="fa-solid fa-arrow-up"></i></div>
 
     </main>
 
     <footer>
-
+        <div class="footerContainer">
+            <h2>VITRIN.O</h2>
+            <span>Sofisticação Digital, Excelência Sem Limites</span>
+            <h3>A empresa</h3>
+            <a href="#sobre">Sobre Nós</a><a href="#especialidades">Especialides</a>
+            <h3>Como Funciona?</h3>
+            <a href="#servicos">Serviços</a><a href="#planos">Planos</a>
+            <h3>Nos contate</h3>
+            <a href="#Formulário"></a>
+        </div>
     </footer>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
