@@ -54,7 +54,7 @@ body {
 
         display: flex;
         align-items: center;
-        height: 70vh;
+        height: 75vh;
         margin: 20px auto;
     }
 }
@@ -155,7 +155,7 @@ body {
         color: var(--clr-text);
         font-family: var(--font-accent);
         font-weight: lighter;
-        font-size: var(--txt-icon);
+        font-size: var(--txt-title);
     }
 
     button {
@@ -310,6 +310,13 @@ nav {
 
 #sobre {
     .sobreContainer {
+
+        .missaoDiv,
+        .visaoDiv,
+        .valoresDiv {
+            display: none;
+        }
+
         height: 100%;
 
         .sobreImg {
@@ -408,6 +415,11 @@ nav {
 
         .carousel-indicators {
             transform: translateY(20px);
+
+            .active {
+                background-color: var(--clr-base-2);
+                filter: drop-shadow(0 0 10px var(--clr-base-2));
+            }
         }
 
         .carousel-control-prev {
@@ -431,4 +443,35 @@ nav {
             background-color: red;
         }
     }
+}
+
+.back {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: var(--clr-base-2);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--clr-button);
+        scale: 1.1;
+        box-shadow: 4px 4px 8px var(--clr-fake-bg-menu);
+    }
+
+    &:active {
+        box-shadow: inset 4px 4px 8px var(--clr-fake-bg-menu);
+        scale: 1;
+    }
+
+    i {
+        font-size: var(--txt-title);
+    cursor: pointer;
+
+    }
+
 }
