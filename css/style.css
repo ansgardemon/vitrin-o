@@ -382,13 +382,22 @@ nav {
 #servicos {
 
     .servicosContainer {
+
+
+
+        .carousel-item.active {
+            display: flex;
+            transition: 0.3s all;
+
+        }
+
         .carousel-item {
             position: relative;
-            display: flex;
+            display: none;
             flex-direction: column;
 
             img {
-                width: 30%;
+                width: 50%;
                 border-radius: 50%;
             }
 
@@ -398,37 +407,51 @@ nav {
                 text-align: center;
                 bottom: 0;
                 left: 0;
+                z-index: 10;
             }
 
         }
 
         .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 1rem;
+
+
+
             h3 {
                 font-family: var(--font-accent);
                 font-size: var(--txt-title);
+                width: 70%;
+                margin: 0 auto;
+                text-align: center;
             }
 
             h4 {
                 font-size: var(--txt-paragraph);
+                width: 70%;
+                margin: 0 auto;
             }
         }
 
         .carousel-indicators {
-            transform: translateY(20px);
-
             .active {
                 background-color: var(--clr-base-2);
                 filter: drop-shadow(0 0 10px var(--clr-base-2));
             }
+            position: absolute;
+            top: 100%;
+            z-index: 10;
         }
 
         .carousel-control-prev {
-            left: 20%;
+            left: 15%;
             transform: translateY(-15%);
         }
 
         .carousel-control-next {
-            right: 20%;
+            right: 15%;
             transform: translateY(-15%);
         }
     }

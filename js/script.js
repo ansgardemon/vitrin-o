@@ -3,6 +3,7 @@ const btnMissao = document.querySelector(".missao")
 const btnVisao = document.querySelector(".visao")
 const btnValores = document.querySelector(".valores")
 
+
 const sobre = document.querySelector(".sobreDiv");
 const missao = document.querySelector(".missaoDiv");
 const visao = document.querySelector(".visaoDiv");
@@ -36,3 +37,4 @@ btnValores.addEventListener("click", ()=> {
     visao.style.display = "none";
     valores.style.display = "flex";
 })
+
