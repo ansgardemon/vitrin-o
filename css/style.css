@@ -45,7 +45,21 @@ html {
     --clr-button: linear-gradient(to bottom, #0E2E34, #2A879A);
 }
 
-/* #endregion */
+
+.lightMode {
+    --clr-base: #0091aa;
+    --clr-base-2:  #0077ff;
+    --clr-text: #030303;
+    --clr-accent: #00bcf5;
+    --clr-accent: #FD7E14;
+    --clr-accent-bg: #FD7E1460;
+    --clr-fake-bg-menu: #f2f2f290;
+    --clr-shadow: #a0a0a0;
+    --clr-black: #f2f2f2;
+    --clr-no-color: transparent;
+    --clr-button: linear-gradient(to bottom, #1e90ff, #5badff);
+}
+
 
 /* #region global  */
 
@@ -54,7 +68,6 @@ body {
     color: var(--clr-text);
 
     section {
-
         display: flex;
         align-items: center;
         height: 75vh;
@@ -66,9 +79,8 @@ body {
 .bg-menu {
     color: var(--clr-base-2) !important;
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
-    ;
-    border-radius: 1rem;
 
+    border-radius: 1rem;
     text-align: center;
 }
 
@@ -79,31 +91,21 @@ body {
     border-color: var(--clr-base-2) !important;
     padding: .5rem;
 
-    &:hover {
-
-        .btn-primary {
-            background-color: var(--clr-button);
-            border-bottom: 1px !important;
-            border-color: var(--clr-base-2) !important;
 
             &:hover {
-                border-color: var(--clr-accent) !important;
-                color: var(--clr-accent);
                 font-weight: bold;
                 transition: font-weight 0.2s ease-in-out;
-                /* First, make text bold */
+                /* Deixa em negrito primeiro */
 
-                border-color: var(--clr-accent) !important;
+                border-color: var(--clr-text) !important;
                 transition: border-color 0.3s ease-in-out 0.2s;
-                /* Then change border color after 0.2s */
+                /* Depois muda a cor da borda */
 
                 & i.fa-whatsapp {
                     color: lime;
                 }
             }
         }
-    }
-}
 
 
 /* #region scroll  */
@@ -171,10 +173,17 @@ body {
         font-size: var(--txt-subtitle);
 
         &:hover {
-            border: 1px solid var(--clr-text) !important;
             color: var(--clr-text);
-            font-weight: normal;
             transform: scale(1.1);
+
+           
+            transition: font-weight 0.2s ease-in-out;
+            font-weight: bold;
+            /* Deixa em negrito primeiro */
+
+            border-color: var(--clr-text) !important;
+            transition: border-color 0.3s ease-in-out 0.2s;
+            /* Depois muda a cor da borda */
 
         }
     }
@@ -186,10 +195,13 @@ body {
 
 nav {
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
-    height: 75px;
+    height: 90px;
     display: flex;
     justify-content: space-evenly !important;
     z-index: 1;
+    
+    backdrop-filter: blur(10px); /* 🔥 Efeito vidro fosco */
+    -webkit-backdrop-filter: blur(10px); /* 🔥 Suporte para Safari */
 
     .navbar-brand {
         font-family: var(--font-txt);
@@ -216,8 +228,8 @@ nav {
         /* Change to your preferred color */
         box-shadow: 0 0 5px var(--clr-no-color) !important;
         /* Optional glow effect */
-        border-bottom: 1px var(--clr-accent);
-        border-color: #FD7E14;
+        border-bottom: 1px var(--clr-text);
+        border-color: var(--clr-text);
     }
 
     /* Logo */
@@ -239,7 +251,7 @@ nav {
                     cursor: pointer;
                     font-weight: bold;
                     transform: scale(1);
-                    color: var(--clr-accent);
+                    color: var(--clr-text);
                 }
 
                 &::after {
@@ -249,7 +261,7 @@ nav {
                     bottom: 0;
                     width: 100%;
                     height: 3px;
-                    background-color: var(--clr-accent);
+                    background-color: var(--clr-text);
                     transform: scaleX(0);
                     transform-origin: center;
                     transition: var(--transition);
@@ -261,6 +273,16 @@ nav {
             }
         }
 
+    }
+
+  
+    
+
+}
+
+@media (max-width: 768px) {
+    nav {
+        font-size: 0.5em !important;
     }
 }
 
@@ -292,8 +314,9 @@ nav {
         position: relative;
         height: 50vh;
         width: 70vw;
-        background-color: #0F282F80;
+        background-color: var(--clr-base);
         border-radius: 20px;
+        filter: opacity(0.5);
 
         top: 0;
         right: 0;
@@ -384,13 +407,22 @@ nav {
 #servicos {
 
     .servicosContainer {
+
+
+
+        .carousel-item.active {
+            display: flex;
+            transition: 0.3s all;
+
+        }
+
         .carousel-item {
             position: relative;
-            display: flex;
+            display: none;
             flex-direction: column;
 
             img {
-                width: 30%;
+                width: 50%;
                 border-radius: 50%;
             }
 
@@ -400,37 +432,52 @@ nav {
                 text-align: center;
                 bottom: 0;
                 left: 0;
+                z-index: 10;
             }
 
         }
 
         .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: 1rem;
+
+
+
             h3 {
                 font-family: var(--font-accent);
                 font-size: var(--txt-title);
+                width: 70%;
+                margin: 0 auto;
+                text-align: center;
             }
 
             h4 {
                 font-size: var(--txt-paragraph);
+                width: 70%;
+                margin: 0 auto;
             }
         }
 
         .carousel-indicators {
-            transform: translateY(20px);
-
             .active {
                 background-color: var(--clr-base-2);
                 filter: drop-shadow(0 0 10px var(--clr-base-2));
             }
+
+            position: absolute;
+            top: 100%;
+            z-index: 10;
         }
 
         .carousel-control-prev {
-            left: 20%;
+            left: 15%;
             transform: translateY(-15%);
         }
 
         .carousel-control-next {
-            right: 20%;
+            right: 15%;
             transform: translateY(-15%);
         }
     }
