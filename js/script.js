@@ -10,6 +10,7 @@ const visao = document.querySelector(".visaoDiv");
 const valores = document.querySelector(".valoresDiv");
 
 
+
 btnSobre.addEventListener("click", ()=> {
     sobre.style.display = "flex";
     missao.style.display = "none";
