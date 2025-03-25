@@ -76,31 +76,21 @@ body {
     border-color: var(--clr-base-2) !important;
     padding: .5rem;
 
-    &:hover {
-
-        .btn-primary {
-            background-color: var(--clr-button);
-            border-bottom: 1px !important;
-            border-color: var(--clr-base-2) !important;
 
             &:hover {
-                border-color: var(--clr-accent) !important;
-                color: var(--clr-accent);
                 font-weight: bold;
                 transition: font-weight 0.2s ease-in-out;
-                /* First, make text bold */
+                /* Deixa em negrito primeiro */
 
-                border-color: var(--clr-accent) !important;
+                border-color: var(--clr-text) !important;
                 transition: border-color 0.3s ease-in-out 0.2s;
-                /* Then change border color after 0.2s */
+                /* Depois muda a cor da borda */
 
                 & i.fa-whatsapp {
                     color: lime;
                 }
             }
         }
-    }
-}
 
 
 /* #region scroll  */
@@ -168,10 +158,17 @@ body {
         font-size: var(--txt-subtitle);
 
         &:hover {
-            border: 1px solid var(--clr-text) !important;
             color: var(--clr-text);
-            font-weight: normal;
             transform: scale(1.1);
+
+           
+            transition: font-weight 0.2s ease-in-out;
+            font-weight: bold;
+            /* Deixa em negrito primeiro */
+
+            border-color: var(--clr-text) !important;
+            transition: border-color 0.3s ease-in-out 0.2s;
+            /* Depois muda a cor da borda */
 
         }
     }
@@ -185,10 +182,13 @@ body {
 
 nav {
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
-    height: 75px;
+    height: 90px;
     display: flex;
     justify-content: space-evenly !important;
     z-index: 1;
+    
+    backdrop-filter: blur(10px); /* 🔥 Efeito vidro fosco */
+    -webkit-backdrop-filter: blur(10px); /* 🔥 Suporte para Safari */
 
     .navbar-brand {
         font-family: var(--font-txt);
@@ -215,8 +215,8 @@ nav {
         /* Change to your preferred color */
         box-shadow: 0 0 5px var(--clr-no-color) !important;
         /* Optional glow effect */
-        border-bottom: 1px var(--clr-accent);
-        border-color: #FD7E14;
+        border-bottom: 1px var(--clr-text);
+        border-color: var(--clr-text);
     }
 
     /* Logo */
@@ -238,7 +238,7 @@ nav {
                     cursor: pointer;
                     font-weight: bold;
                     transform: scale(1);
-                    color: var(--clr-accent);
+                    color: var(--clr-text);
                 }
 
                 &::after {
@@ -248,7 +248,7 @@ nav {
                     bottom: 0;
                     width: 100%;
                     height: 3px;
-                    background-color: var(--clr-accent);
+                    background-color: var(--clr-text);
                     transform: scaleX(0);
                     transform-origin: center;
                     transition: var(--transition);
@@ -260,6 +260,16 @@ nav {
             }
         }
 
+    }
+
+  
+    
+
+}
+
+@media (max-width: 768px) {
+    nav {
+        font-size: 0.5em !important;
     }
 }
 
