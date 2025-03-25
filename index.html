@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VITRIN.O</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body class="darkMode">
@@ -17,7 +27,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse bg-dark bg-menu" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 bg-topo">
+
                     <li class="nav-item active">
                         <a class="nav-link" href="#sobre">Sobre Nós</a>
                     </li>
@@ -248,27 +260,62 @@
             <div class="formularioContainer container d-flex justify-content-center flex-column">
 
                 <h2 class="text-center my-5">entre em contato</h2>
+
+
                 <div class="form d-flex justify-content-center">
                     <div class="formImg">
                         <h2>Fale com um especialista</h2>
-                        <img src="" alt="">
+                        <img src="img/contato/imagemContato.webp" alt="">
                     </div>
-                    <form>
-                        <ul>
-                            <li><input type="text" name="name" id="name" placeholder="Nome:"></li>
-                            <li><input type="tel" name="tel" id="tel" placeholder="Telefone:"></li>
-                            <li><input type="email" name="email" id="email" placeholder="E-mail:"></li>
-                            <li><textarea name="textarea" id="textarea"
-                                    placeholder="Conte-nos o que precisa:"></textarea></li>
-                            <li><button type="submit" class="btn btn-primary">Enviar</button></li>
+                    <form action="https://api.staticforms.xyz/submit" method="post">
+                        <ul class="contactForm">
+                            <li>
+                                <i class="bx bxs-user-check"></i>
+                                <input required type="text" placeholder="Nome:" name="name">
+                            </li>
+                            <li>
+                                <i class="bx bxs-envelope"></i>
+                                <input type="email" placeholder="E-mail:" name="email">
+                            </li>
+                            <li>
+                                <i class="bx bxs-phone-call"></i>
+                                <input required type="tel" placeholder="Telefone:" name="phone"
+                                    onkeypress="$(this).mask('(00)00000-0000')">
+                            </li>
+                            <li>
+                                <i class="bx bxs-chat"></i>
+                                <input required type="text" placeholder="Assunto:" name="subject">
+                            </li>
+                            <li>
+                                <textarea name="" id="" placeholder=""></textarea>
+                            </li>
+                            <li class="btnFit">
+                                <input type="submit" value="Enviar" class="btnDefault">
+                                <input type="reset" value="Limpar" class="btnDefault">
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    Eu declaro que os dados enviados são verdaeiros.
+                                </p>
+                            </li>
                         </ul>
+                        <input type="hidden" name="accessKey" value="ccab1c88-c94a-40e7-b8b8-d809a731b098" />
+                        <input type="hidden" name="redirectTo" value="index.html" />
+
                     </form>
                 </div>
 
             </div>
         </section>
 
+        <div class="modes">
+            <button class="lightBtn"><i class="fa-solid fa-lightbulb"></i></button>
+            <button class="darkBtn"><i class="fa-regular fa-lightbulb"></i></button>
+
         <div class="back" onclick="window.scrollTo(0, 0)"><i class="fa-solid fa-arrow-up"></i></div>
+
+
 
     </main>
 
@@ -286,4 +333,5 @@
     </footer>
     <script src="js/script.js"></script>
 </body>
+
 </html>
