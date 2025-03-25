@@ -263,21 +263,55 @@
                         <h2>Fale com um especialista</h2>
                         <img src="" alt="">
                     </div>
-                    <form>
-                        <ul>
-                            <li><input type="text" name="name" id="name" placeholder="Nome:"></li>
-                            <li><input type="tel" name="tel" id="tel" placeholder="Telefone:"></li>
-                            <li><input type="email" name="email" id="email" placeholder="E-mail:"></li>
-                            <li><textarea name="textarea" id="textarea"
-                                    placeholder="Conte-nos o que precisa:"></textarea></li>
-                            <li><button type="submit" class="btn btn-primary">Enviar</button></li>
+                    <form action="https://api.staticforms.xyz/submit" method="post">
+                        <ul class="contactForm">
+                            <li>
+                                <i class="bx bxs-user-check"></i>
+                                <input required type="text" placeholder="Nome:" name="name">
+                            </li>
+                            <li>
+                                <i class="bx bxs-envelope"></i>
+                                <input type="email" placeholder="E-mail:" name="email">
+                            </li>
+                            <li>
+                                <i class="bx bxs-phone-call"></i>
+                                <input required type="tel" placeholder="Telefone:" name="phone"
+                                    onkeypress="$(this).mask('(00)00000-0000')">
+                            </li>
+                            <li>
+                                <i class="bx bxs-chat"></i>
+                                <input required type="text" placeholder="Assunto:" name="subject">
+                            </li>
+                            <li>
+                                <textarea name="" id="" placeholder=""></textarea>
+                            </li>
+                            <li class="btnFit">
+                                <input type="submit" value="Enviar" class="btnDefault">
+                                <input type="reset" value="Limpar" class="btnDefault">
+                            </li>
+                            <li>
+                                <p>
+                                    <input type="checkbox">
+                                    Eu declaro que os dados enviados são verdaeiros.
+                                </p>
+                            </li>
                         </ul>
+                        <input type="hidden" name="accessKey" value="ccab1c88-c94a-40e7-b8b8-d809a731b098" />
+                        <input type="hidden" name="redirectTo" value="index.html" />
                     </form>
                 </div>
 
             </div>
         </section>
+        <div class="modes">
+            <button class="lightBtn"><i class="fa-solid fa-lightbulb"></i></button>
+            <button class="darkBtn"><i class="fa-regular fa-lightbulb"></i></button>
 
+<<<<<<< Updated upstream
+=======
+        </div>
+        <div class="back" onclick="window.scrollTo(0, 0)"><i class="fa-solid fa-arrow-up"></i></div>
+>>>>>>> Stashed changes
 
     </main>
 
