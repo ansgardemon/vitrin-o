@@ -1,8 +1,5 @@
 var btnSobre = document.querySelector(".sobre")
 
-<<<<<<< Updated upstream
-btnSobre.addEventListener
-=======
 const sobre = document.querySelector(".sobreDiv");
 const missao = document.querySelector(".missaoDiv");
 const visao = document.querySelector(".visaoDiv");
@@ -67,4 +64,3 @@ lightBtn.addEventListener("click", ()=> {
 //     }
 //   });
   
->>>>>>> Stashed changes
