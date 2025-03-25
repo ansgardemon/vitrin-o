@@ -459,6 +459,11 @@ nav {
         }
 
         .carousel-indicators {
+            .active {
+                background-color: var(--clr-base-2);
+                filter: drop-shadow(0 0 10px var(--clr-base-2));
+            }
+
             position: absolute;
             top: 100%;
             z-index: 10;
