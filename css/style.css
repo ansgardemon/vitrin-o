@@ -1,3 +1,4 @@
+/* #region root */
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 
 @font-face {
@@ -44,6 +45,7 @@ html {
     --clr-button: linear-gradient(to bottom, #0E2E34, #2A879A);
 }
 
+
 .lightMode {
     --clr-base: #0091aa;
     --clr-base-2:  #0077ff;
@@ -57,6 +59,7 @@ html {
     --clr-no-color: transparent;
     --clr-button: linear-gradient(to bottom, #1e90ff, #5badff);
 }
+
 
 /* #region global  */
 
@@ -188,8 +191,6 @@ body {
 
 /* #endregion global  */
 
-
-
 /* #region header  */
 
 nav {
@@ -290,9 +291,7 @@ nav {
 
 /* #endregion header  */
 
-
 /* #region main  */
-
 #banner {
     display: block;
     margin: 0;
@@ -384,6 +383,9 @@ nav {
     }
 }
 
+/* #endregion */
+
+/* #region especialidades */
 #especialidades {
 
     .especialidadesContainer {
@@ -517,8 +519,100 @@ nav {
 
     i {
         font-size: var(--txt-title);
-    cursor: pointer;
+        cursor: pointer;
 
     }
 
 }
+
+/* #endregion */
+
+/* #region contatos */
+#contatos {
+
+    .form {
+        background-color: var(--clr-base-2);
+        width: 100%;
+        border-radius: 10px;
+        padding: 2em 1em;
+        justify-content: space-between;
+
+        margin: auto;
+        color: var(--clr-base);
+        display: flex;
+
+        .formImg {
+            width: 40%;
+
+            img {
+                width: 100%;
+                padding: 1em 1em;
+                background-color: var(--clr-fake-bg-menu);
+                margin: auto;
+                border-radius: 10px;
+            }
+        }
+
+        .contactForm {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            input,
+            textarea {
+                width: 100%;
+                border-radius: 10px;
+                resize: none;
+                background-color: var(--clr-fake-bg-menu);
+                color: white;
+                padding: 5px;
+                border: none;
+
+                &::placeholder {
+                    color: white;
+                }
+            }
+
+            .btnFit {
+                transition: .3s;
+                cursor: pointer;
+                border: 3px solid transparent;
+
+                &:hover {
+                    border: 3px solid white;
+                    border-radius: 15px;
+
+                }
+            }
+
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        .contactLi {
+            display: flex;
+
+            width: 100%;
+
+            input {
+                width: 45%;
+
+            }
+
+            input[type="text"] {
+                margin-right: 65px;
+            }
+        }
+    }
+
+    form {
+        width: 55%;
+    }
+}
+
+
+
+/* #endregion */
