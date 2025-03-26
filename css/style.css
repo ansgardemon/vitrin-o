@@ -34,6 +34,7 @@ html {
 
 h3, h4, p {
 color: var(--clr-text);
+text-decoration: none;
 }
 
 .darkMode {
@@ -500,12 +501,60 @@ nav {
 }
 
 #planos {
+    ul li{
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    i{
+        color: greenyellow;
+        padding: 10px;     
+    }
+    
+    .x{
+        color: red!important
+    }
     .planosContainer {
-        display: flex;
-        align-items: center;
-
+        h2{
+            color: #2A879A;
+            font-family:var(--txt-title);
+        }        
         .planosLista {
-            background-color: red;
+            display: grid;
+            grid-template-columns: 10px 10px;
+            gap: 20px;
+            align-items: center;
+            font-size: large;
+            margin: auto;
+            
+            h3 {
+                text-align: center;
+                color: #2A879A;
+                margin-bottom: 3vh;
+            }
+            
+            .planosCard1 {
+                border-radius: 15px;
+                border: solid var(--clr-base-2);       
+                padding-top:20px;
+                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                margin: auto;
+
+            }
+            .planosCard2 {
+                border-radius: 15px;
+                border: solid #2A879A;       
+                padding-top:20px;
+                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                margin: auto;
+            }
+            .planosCard3 {
+                border-radius: 15px;
+                border: solid #2A879A;       
+                padding-top:20px;
+                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                margin: auto;
+            }            
         }
     }
 }
@@ -759,7 +808,7 @@ footer {
         }
     }
 
-}
+
 
 
 
