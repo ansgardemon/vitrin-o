@@ -193,20 +193,23 @@ body {
 
 /* #region header  */
 
+
+
+
 nav {
     background: linear-gradient(to bottom, var(--clr-black), var(--clr-base));
     height: 90px;
     display: flex;
     justify-content: space-evenly !important;
-    z-index: 1;
+    z-index: 1;;
     
-    backdrop-filter: blur(10px); /* 🔥 Efeito vidro fosco */
-    -webkit-backdrop-filter: blur(10px); /* 🔥 Suporte para Safari */
+ 
 
     .navbar-brand {
         font-family: var(--font-txt);
         font-size: var(--txt-logo) !important;
         color: var(--clr-text);
+        margin-left: 6vw;
 
 
         &:hover {
@@ -237,7 +240,10 @@ nav {
     .navbar-nav {
         display: flex;
         justify-content: space-around;
-        width: 100%;
+        margin: 0 auto;
+        gap: 2vw;
+ 
+
 
         .nav-item {
             .nav-link {
@@ -280,11 +286,6 @@ nav {
 
 }
 
-@media (max-width: 768px) {
-    nav {
-        font-size: 0.5em !important;
-    }
-}
 
 /* Lista de Links */
 
