@@ -1,4 +1,7 @@
-var btnSobre = document.querySelector(".sobre")
+const btnSobre = document.querySelector(".sobre")
+const btnMissao = document.querySelector(".missao")
+const btnVisao = document.querySelector(".visao")
+const btnValores = document.querySelector(".valores")
 
 const sobre = document.querySelector(".sobreDiv");
 const missao = document.querySelector(".missaoDiv");
