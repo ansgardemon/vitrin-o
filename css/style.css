@@ -32,8 +32,13 @@ html {
     scroll-behavior: smooth;
 }
 
+h3, h4, p {
+color: var(--clr-text);
+}
+
 .darkMode {
     --clr-base: #0F282F;
+    --clr-base-transparent: #0F282F85;
     --clr-base-2: #2A879A;
     --clr-text: #f2f2f2;
     --clr-accent: #FD7E14;
@@ -47,17 +52,17 @@ html {
 
 
 .lightMode {
-    --clr-base: #0091aa;
-    --clr-base-2:  #0077ff;
+    --clr-base: #eeeeee;
+    --clr-base-transparent: #FD7E1455;
+    --clr-base-2:  #FD7E14;
     --clr-text: #030303;
-    --clr-accent: #00bcf5;
     --clr-accent: #FD7E14;
     --clr-accent-bg: #FD7E1460;
     --clr-fake-bg-menu: #f2f2f290;
     --clr-shadow: #a0a0a0;
     --clr-black: #f2f2f2;
     --clr-no-color: transparent;
-    --clr-button: linear-gradient(to bottom, #1e90ff, #5badff);
+    --clr-button: linear-gradient(to bottom, #FD7E14, #f3aa6e);
 }
 
 
@@ -168,12 +173,12 @@ body {
         width: 200px;
         border-radius: 50px;
         border: 1px solid transparent;
-        background: linear-gradient(to right, var(--clr-base-2), var(--clr-base));
+        background: var(--clr-button);
         font-family: var(--font-accent);
         font-size: var(--txt-subtitle);
+        color: var(--clr-text);
 
         &:hover {
-            color: var(--clr-text);
             transform: scale(1.1);
 
            
@@ -311,24 +316,28 @@ nav {
 
     }
 
-    .bannerTextBg {
+    .bannerTxt {
         position: relative;
-        height: 50vh;
-        width: 70vw;
-        background-color: var(--clr-base);
-        border-radius: 20px;
-        filter: opacity(0.5);
-
-        top: 0;
-        right: 0;
-    }
-
-    p {
-        text-align: center;
-        position: absolute;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .desfoque {
+        display: grid;
+        place-items: center;
+        background: var(--clr-base-transparent); /* Fundo semi-transparente */
+        backdrop-filter: blur(3px); /* Efeito de desfoque */
+        padding: 30px;
+        border-radius: 10px;
+        color: var(--clr-text);
         font-size: var(--txt-logo);
-        z-index: 1;
-    }
+        text-align: center;
+        width: 50vw;
+        height: 50%;
+      }
 }
 
 #sobre {
@@ -380,6 +389,12 @@ nav {
                 }
 
             }
+        }
+
+        .missaoDiv,
+        .visaoDiv,
+        .valoresDiv {
+            display: none;
         }
     }
 }
@@ -663,10 +678,9 @@ footer {
 
         .contentFooter2 {
             display: flex;
+            /* display: block; */
             flex-direction: column;
 
-
-            a {
                 display: flex;
                 justify-content: center;
                 text-decoration: none;
@@ -700,6 +714,7 @@ footer {
                 }
 
 
+
             }
         }
 
@@ -727,6 +742,7 @@ footer {
         }
     }
 
+
     @media (max-width: 768px) {
 
         .footerContainer {
@@ -748,3 +764,4 @@ footer {
 
 
 /* #endregion */
+
