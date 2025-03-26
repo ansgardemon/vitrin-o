@@ -201,15 +201,15 @@ nav {
     height: 90px;
     display: flex;
     justify-content: space-evenly !important;
-    z-index: 1;;
+    z-index: 1;
     
  
-
     .navbar-brand {
         font-family: var(--font-txt);
         font-size: var(--txt-logo) !important;
         color: var(--clr-text);
         margin-left: 6vw;
+        z-index: 2;
 
 
         &:hover {
@@ -551,6 +551,11 @@ nav {
                 background-color: var(--clr-fake-bg-menu);
                 margin: auto;
                 border-radius: 10px;
+            }
+
+            h2 {
+                color: var(--clr-text);
+                text-align: center;
             }
         }
 
