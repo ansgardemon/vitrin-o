@@ -29,8 +29,28 @@
   --clr-black: #030303;
   --transparent: transparent;
   --clr-gradient: linear-gradient(to bottom, #0E2E34, #2A879A);
+  --clr-planos: linear-gradient(to bottom, #0E2E34, #2A879A);
+  --clr-background: linear-gradient(to bottom, #0E2E34, #2A879A);
   --clr-gradient-invert: linear-gradient(to top, #0E2E34, transparent);
 }
+
+.lightMode {
+    --clr-base: #eeeeee;
+    --clr-base-transparent: #FD7E1455;
+    --clr-base-2:  #FD7E14;
+    --clr-text: #030303;
+    --clr-accent: #FD7E14;
+    --clr-accent-bg: #FD7E1460;
+    --clr-fake-bg-menu: #f2f2f290;
+    --clr-shadow: #030303;
+    --clr-black: #f2f2f2;
+    --clr-no-color: transparent;
+    --clr-planos: linear-gradient(to bottom, #fcffff, #FD7E14);
+    --clr-gradient: linear-gradient(to bottom, #fcffff, #FD7E14);
+    --clr-gradient-invert: linear-gradient(to top, #FD7E14, transparent);
+    --clr-background: #eeeeee;
+}
+
 
 /* #endregion variaveis */
 
@@ -52,7 +72,7 @@ html {
 }
 
 body {
-  background: var(--clr-gradient);
+  background: var(--clr-background);
   color: var(--clr-text);
   font-size: var(--txt-paragraph);
 
@@ -132,7 +152,7 @@ body {
 
 .navbar {
   background-color: var(--clr-fake-bg-menu) !important;
-  z-index: 1;
+  z-index: 100;
   position: fixed;
   width: 100vw;
   display: block;
@@ -363,23 +383,47 @@ body {
 
     }
 
+    /* Default indicators */
+.carousel-indicators [data-bs-target] {
+    background-color: var(--clr-base-2) !important;
+}
+
+/* Active indicator */
+
+
     .carousel-caption {
       h3 {
         font-family: var(--font-accent);
+        font-weight: bold;
         font-size: var(--txt-title);
+        color: var(--clr-base-2);
       }
 
       h4 {
         font-size: var(--txt-paragraph);
+        color: var(--clr-text);
       }
+
+      p {
+        color: var(--clr-text);
+      }
+    }
+
+    .carousel-indicators [data-bs-target].active {
+        background-color: var(--clr-base-2) !important; /* Change to whatever color you want for active */
+        filter: drop-shadow(0 0 10px var(--clr-shadow));
+    }
+
+    .carousel-indicators [data-bs-target] {
+        background-color: var(--clr-text) !important; /* Change to whatever color you want for active */
+        filter: drop-shadow(0 0 10px var(--clr-shadow));
     }
 
     .carousel-indicators {
 
       /* transform: translateY(20px); */
       .active {
-        filter: drop-shadow(0 0 5px var(--clr-base-2));
-        background-color: var(--clr-base-2);
+        filter: drop-shadow(0 0 5px var(--clr-text));
 
       }
     }
@@ -422,7 +466,7 @@ body {
       gap: 20px;
 
       .cards {
-        background: var(--clr-gradient);
+        background: var(--clr-planos);
         width: 80%;
         padding: 20px;
         border-radius: 15px;
