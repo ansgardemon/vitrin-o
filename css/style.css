@@ -49,6 +49,9 @@ text-decoration: none;
     --clr-black: #030303;
     --clr-no-color: transparent;
     --clr-button: linear-gradient(to bottom, #0E2E34, #2A879A);
+    --clr-whatsapp: #25d366;
+    --clr-planos:linear-gradient(to bottom, #0E2E34, #2A879A);
+
 }
 
 
@@ -57,13 +60,15 @@ text-decoration: none;
     --clr-base-transparent: #FD7E1455;
     --clr-base-2:  #FD7E14;
     --clr-text: #030303;
-    --clr-accent: #FD7E14;
+    --clr-accent: #2A879A;
     --clr-accent-bg: #FD7E1460;
     --clr-fake-bg-menu: #f2f2f290;
     --clr-shadow: #a0a0a0;
     --clr-black: #f2f2f2;
     --clr-no-color: transparent;
-    --clr-button: linear-gradient(to bottom, #FD7E14, #f3aa6e);
+    --clr-button: linear-gradient(to bottom, #e2c7a3, #fD7E14);
+    --clr-whatsapp: #25d366;
+    --clr-planos:linear-gradient(to bottom, #ffffff, #fD7E14);
 }
 
 
@@ -108,7 +113,7 @@ body {
                 /* Depois muda a cor da borda */
 
                 & i.fa-whatsapp {
-                    color: lime;
+                    color: var(--clr-whatsapp)
                 }
             }
         }
@@ -477,16 +482,22 @@ nav {
             }
         }
 
-        .carousel-indicators {
-            .active {
-                background-color: var(--clr-base-2);
-                filter: drop-shadow(0 0 10px var(--clr-base-2));
-            }
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--clr-text) !important;
+        }
 
+        .carousel-indicators [data-bs-target].active {
+            background-color: var(--clr-base-2) !important; /* Change to whatever color you want for active */
+            filter: drop-shadow(0 0 10px var(--clr-active-color));
+            filter: drop-shadow(0 0 10px var(--clr-base-2));
+        }
+
+        .carousel-indicators {
             position: absolute;
             top: 100%;
             z-index: 10;
         }
+
 
         .carousel-control-prev {
             left: 15%;
@@ -501,13 +512,15 @@ nav {
 }
 
 #planos {
+
+    margin-top: 20vh;
     ul li{
         width: 70%;
         margin: auto;
         margin-bottom: 20px;
     }
     i{
-        color: greenyellow;
+        color: var(--clr-whatsapp);
         padding: 10px;     
     }
     
@@ -516,8 +529,8 @@ nav {
     }
     .planosContainer {
         h2{
-            color: #2A879A;
-            font-family:var(--txt-title);
+            color: var(--clr-base-2);
+            font-size:var(--txt-title);
         }        
         .planosLista {
             display: grid;
@@ -529,7 +542,7 @@ nav {
             
             h3 {
                 text-align: center;
-                color: #2A879A;
+                color: var(--clr-base-2);
                 margin-bottom: 3vh;
             }
             
@@ -537,22 +550,22 @@ nav {
                 border-radius: 15px;
                 border: solid var(--clr-base-2);       
                 padding-top:20px;
-                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                background: var(--clr-planos);
                 margin: auto;
 
             }
             .planosCard2 {
                 border-radius: 15px;
-                border: solid #2A879A;       
+                border: solid var(--clr-base-2);       
                 padding-top:20px;
-                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                background: var(--clr-planos);
                 margin: auto;
             }
             .planosCard3 {
                 border-radius: 15px;
-                border: solid #2A879A;       
+                border: solid var(--clr-base-2);       
                 padding-top:20px;
-                background: linear-gradient(to bottom, #0E2E34, #2A879A);
+                background: var(--clr-planos);
                 margin: auto;
             }            
         }
@@ -647,6 +660,8 @@ nav {
 /* #region contatos */
 #contatos {
 
+    margin-top: 20vh;
+
     .form {
         background-color: var(--clr-base-2);
         width: 100%;
@@ -687,12 +702,12 @@ nav {
                 border-radius: 10px;
                 resize: none;
                 background-color: var(--clr-fake-bg-menu);
-                color: white;
+                color: var(--clr-text);
                 padding: 5px;
                 border: none;
 
                 &::placeholder {
-                    color: white;
+                    color: var(--clr-text);
                 }
             }
 
@@ -781,12 +796,16 @@ footer {
             display: flex;
             /* display: block; */
             flex-direction: column;
+            text-align: center;
 
+                a{
+
+                
                 display: flex;
                 justify-content: center;
-                text-decoration: none;
                 color: var(--clr-base-2);
-
+                text-decoration: none;
+            }
 
                 &:hover {
                     color: var(--clr-text);
