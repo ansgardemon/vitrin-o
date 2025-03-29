@@ -40,12 +40,24 @@
   --clr-base-2: #FD7E14;
   --clr-text: #030303;
   --clr-fake-bg-menu: #f2f2f290;
-  --clr-black: #f2f2f2;
+  --clr-black: #cecdcc;
   --clr-transparent: transparent;
   --clr-gradient: linear-gradient(to bottom, #FD7E14, #f3aa6e);
-
+  --clr-gradient-invert: linear-gradient(to top, #FD7E14, transparent);
   --clr-background: #eeeeee;
 
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(0%); /* Keep default color in dark mode */
+}
+
+
+.lightMode .carousel-control-prev-icon,
+.lightMode .carousel-control-next-icon {
+  filter: invert(100%);
 }
 
 /* #endregion variaveis */
@@ -102,11 +114,13 @@ body {
     background: var(--clr-base-2);
     border-radius: 50px;
     border: 1px solid var(--transparent);
+    color: var(--clr-text);
 
     &:hover {
       border: 1px solid var(--clr-text);
       scale: 1.1;
       background: var(--clr-gradient);
+      color: var(--clr-text);
 
     }
 
@@ -248,6 +262,13 @@ body {
   .sobreContainer {
     flex-direction: column;
 
+
+    p {
+      font-size: var(--txt-paragraph);
+    }
+
+
+
     .sobreTxt {
       flex-direction: column;
       justify-content: center;
@@ -258,7 +279,6 @@ body {
       background-color: var(--clr-fake-bg-menu);
       border-radius: 15px;
       margin-bottom: 2vh;
-      font-size: calc(var(--txt-paragraph) * .8);
       padding: 10px;
 
       ul {
@@ -403,6 +423,15 @@ body {
       }
     }
 
+    .carousel-indicators [data-bs-target] {
+      background-color: var(--clr-text);
+      filter: drop-shadow(0 0 5px var(--clr-base-2));
+    }
+
+ .carousel-indicators [data-bs-target].active {
+      background-color: var(--clr-base-2);
+      filter: drop-shadow(0 0 5px var(--clr-base-2));
+    }
     .carousel-control-prev {
       left: 00%;
       transform: translateY(-15%);
@@ -441,7 +470,7 @@ body {
       gap: 20px;
 
       .cards {
-        background: var(--clr-gradient);
+        background: var(--clr-gradient-invert);
         width: 80%;
         padding: 20px;
         border-radius: 15px;
@@ -489,10 +518,10 @@ body {
     flex-direction: column;
     margin: auto;
 
-    h2 {
-      color: var(--clr-base) !important;
-    }
 
+    h2 {
+      color: var(--clr-base-2);
+    }
 
 
     .formImg {
@@ -589,7 +618,7 @@ body {
   cursor: pointer;
 
   &:hover {
-    background: var(--clr-button);
+    background: var(--clr-gradient);
     scale: 1.1;
     box-shadow: 4px 4px 8px var(--clr-fake-bg-menu);
   }
@@ -651,7 +680,7 @@ body {
       cursor: pointer;
 
       &:hover {
-        background: var(--clr-button);
+        background: var(--clr-gradient);
       }
 
     }
@@ -773,7 +802,7 @@ footer {
       margin: auto;
 
       h2 {
-        color: var(--clr-base) !important;
+        color: var(--clr-base-2) !important;
       }
 
       .formulario {
@@ -998,7 +1027,7 @@ footer {
       margin: auto;
 
       h2 {
-        color: var(--clr-base) !important;
+        color: var(--clr-base-2) !important;
       }
 
       .formulario {

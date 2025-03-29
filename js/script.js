@@ -42,15 +42,28 @@ const darkBtn = document.querySelector(".darkBtn")
 const lightBtn = document.querySelector(".lightBtn")
 const body = document.body
 
-darkBtn.addEventListener("click", ()=> {
+if (body.classList.contains('lightMode')) {
+  lightBtn.style.display = 'none';
+  darkBtn.style.display = 'block';
+} else {
+  lightBtn.style.display = 'block';
+  darkBtn.style.display = 'none';
+}
+
+darkBtn.addEventListener("click", () => {
     body.classList.remove("lightMode");
     body.classList.add("darkMode");
 
-})
+    // Toggle the button visibility
+    lightBtn.style.display = 'block';
+    darkBtn.style.display = 'none';
+});
 
-
-lightBtn.addEventListener("click", ()=> {
+lightBtn.addEventListener("click", () => {
     body.classList.remove("darkMode");
     body.classList.add("lightMode");
 
-})
+    // Toggle the button visibility
+    lightBtn.style.display = 'none';
+    darkBtn.style.display = 'block';
+});
