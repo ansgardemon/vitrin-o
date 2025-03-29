@@ -54,16 +54,3 @@ lightBtn.addEventListener("click", ()=> {
     body.classList.add("lightMode");
 
 })
-
-
-
-window.addEventListener("scroll", function () {
-    var navbar = document.querySelector("nav");
-    
-    if (window.scrollY > 100) { // Altere '200' para o valor desejado
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
-  
