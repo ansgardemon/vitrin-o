@@ -67,14 +67,3 @@ window.addEventListener("scroll", function () {
     }
   });
   
-  document.querySelector('.nav-link').addEventListener('click', function(e) {
-    e.preventDefault(); // Impede o comportamento padrão do link
-  
-    const target = document.querySelector(this.getAttribute('href'));
-    
-    // Faz a rolagem com o deslocamento de 100px
-    window.scrollTo({
-      top: target.offsetTop + 0, // Desce 100px a mais
-      behavior: 'smooth' // Rolagem suave
-    });
-  });
